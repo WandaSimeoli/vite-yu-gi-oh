@@ -1,5 +1,4 @@
 <script>
-
 export default {
   components :{
   },
@@ -11,7 +10,11 @@ export default {
   props : {
     cards : {
       type: Array,
-      default: []
+      default: [],
+    },
+    cardsNumber : {
+      type: Number,
+      default : 0,
     }
   }
 }
@@ -20,6 +23,7 @@ export default {
 <template>
   <main>
     <div class="container">
+      <div class="cardsNumber"> Found {{ cardsNumber }} cards</div>
     <div class="row">
     <div class="col" v-for="(card, i) in cards" :key="i">
         <img src="" alt="">
@@ -37,6 +41,11 @@ export default {
 main {
   background-color: #D48F38;
   padding: 30px;
+}
+.cardsNumber {
+  background-color: black;
+  color: white;
+  padding: 10px;
 }
 .row {
   display: flex;

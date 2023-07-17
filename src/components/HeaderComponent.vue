@@ -22,6 +22,9 @@ export default {
 </template>
 
 <style scoped lang="scss">
+header {
+  padding: 10px;
+}
 h1 {
   display: inline-block;
   margin-left: 20px;

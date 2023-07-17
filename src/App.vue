@@ -33,7 +33,8 @@ export default {
 <template>
   <HeaderComponent />
   <MainComponent 
-  :cards = "cards"/>
+  :cards = "cards"
+  :cards-number="cards.length"/>
   <FooterComponent />
 </template>
 
@@ -41,7 +42,8 @@ export default {
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {
