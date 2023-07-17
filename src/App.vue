@@ -13,13 +13,17 @@ export default {
   },
 
   data() {
-    return {  }
+    return { 
+      cards : []
+     }
   },
   methods: {},
   created () {
-    axios .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+    axios 
+    .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=30&offset=0')
     .then (response => {
-      console.log(response);
+      console.log(response.data.data);
+      this.cards = response.data.data;
 
     });
   }
@@ -28,10 +32,20 @@ export default {
 
 <template>
   <HeaderComponent />
-  <MainComponent />
+  <MainComponent 
+  :cards = "cards"/>
   <FooterComponent />
 </template>
 
 <style lang="scss">
-@use "assets/scss/main.scss" as *;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
 </style>
