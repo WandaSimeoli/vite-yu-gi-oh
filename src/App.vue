@@ -3,6 +3,7 @@
 import HeaderComponent from './components/HeaderComponent.vue';
 import MainComponent from './components/MainComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
+import axios from 'axios';
 
 export default {
   components :{
@@ -14,8 +15,15 @@ export default {
   data() {
     return {  }
   },
-  methods: {}
-}
+  methods: {},
+  created () {
+    axios .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+    .then (response => {
+      console.log(response);
+
+    });
+  }
+};
 </script>
 
 <template>
