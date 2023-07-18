@@ -14,18 +14,32 @@ export default {
 
   data() {
     return { 
-      cards : []
+      cards : [],
+      searchArchetype : ""
      }
+     
   },
-  methods: {},
-  created () {
-    axios 
-    .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=30&offset=0')
+  methods: {
+    getResults () {
+       axios 
+    .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=50&offset=0', {
+      params: {
+        archetype: this.searchArchetype || null
+      }
+    })
     .then (response => {
       console.log(response.data.data);
       this.cards = response.data.data;
 
     });
+    },
+    performSearch () {
+      console.log ('intercettato evento');
+      this.getResults;
+    }
+  },
+  created () {
+    this.getResults();
   }
 };
 </script>
@@ -34,7 +48,8 @@ export default {
   <HeaderComponent />
   <MainComponent 
   :cards = "cards"
-  :cards-number="cards.length"/>
+  :cards-number="cards.length"
+  @search ="getResults"/>
   <FooterComponent />
 </template>
 

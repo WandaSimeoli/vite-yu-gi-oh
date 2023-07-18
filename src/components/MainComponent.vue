@@ -4,7 +4,8 @@ export default {
   },
 
   data() {
-    return {  }
+    return { 
+     }
   },
   methods: {},
   props : {
@@ -22,9 +23,12 @@ export default {
 
 <template>
   <main>
-    <form action="">
+    <form action=""  @submit.prevent ="$emit('search')">
       <select name="Select Archetype" id="" placeholder="Select Archetype">
-        <option value="">Archetype</option>
+        <option value="">Select Archetype</option>
+        <option value="alien">Alien</option>
+        <option value="unchained">Unchained</option>
+        <option value="nobleKnight">Noble Knight</option>
       </select>
     </form>
     <div class="container">
