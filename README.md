@@ -10,3 +10,7 @@ Create un nuovo progetto utilizzando Vite e Vue 3 e definite i componenti necess
 Al caricamento della pagina, effettuate una chiama ajax all'API di Yu Gi Oh
 e con i dati restituiti, stampate una card per ogni carta.
 ATTENZIONE: l'api restituisce tutti i risultati in un colpo solo. Per evitare attese e/o rallentamenti nelle richieste, potete diminuire il numero di risultati sfruttando i parametri *num* e *offset*
+
+Continuate a lavorare nella stessa repo di ieri e aggiungete una select per filtrare i risultati in base all'archetipo.
+Le option della select devono essere popolate dinamicamente chiamando questo endpoint dell'api:
+Quando l'utente seleziona un valore dalla lista, viene effettuata una chiamata alle API con l'archetipo selezionato

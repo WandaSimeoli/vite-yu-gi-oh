@@ -22,11 +22,16 @@ export default {
 
 <template>
   <main>
+    <form action="">
+      <select name="Select Archetype" id="" placeholder="Select Archetype">
+        <option value="">Archetype</option>
+      </select>
+    </form>
     <div class="container">
       <div class="cardsNumber"> Found {{ cardsNumber }} cards</div>
     <div class="row">
     <div class="col" v-for="(card, i) in cards" :key="i">
-        <img src="" alt="">
+        <img :src="card.card_images[0].image_url" alt="">
         <h2> {{ card.name }}</h2>
         <div> {{ card.archetype }}</div>
     </div>
@@ -46,11 +51,13 @@ main {
   background-color: black;
   color: white;
   padding: 10px;
+  height: 50px;
 }
 .row {
   display: flex;
   flex-wrap: wrap;
   background-color: white;
+  margin: 0 auto;
   .col {
     margin: 10px;
     width: calc((100% / 5) - 20px) ;
@@ -59,6 +66,10 @@ main {
 
     h2 {
       color: white;
+      text-transform: uppercase;
+    }
+    img {
+      width: 100%;
     }
   }
 }
